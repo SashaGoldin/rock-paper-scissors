@@ -7,8 +7,10 @@ if 'rounds' not in st.session_state:
 
 st.title("The Game")
 st.subheader("Choose an option below and the computer will randomly pick one as well")
-st.text("For additional details hover here ->", help="After each round you will see the result in the bottom right corner. "
-                                                     "After 5 rounds the result will be announced.")
+st.text("For additional details hover here ->", help="""
+After each round you will see the result in the bottom right corner.
+
+After 5 rounds the game's result will be announced.""")
 st.markdown(" ")
 phld = st.empty()
 
