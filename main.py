@@ -5,7 +5,7 @@ import streamlit as st
 if 'rounds' not in st.session_state:
     st.session_state['rounds'] = []
 
-st.title("The Game")
+st.title("The RPS Game")
 st.subheader("Choose an option below and the computer will randomly pick one as well")
 st.text("For additional details hover here ->", help="""
 After each round you will see the result in the bottom right corner.
