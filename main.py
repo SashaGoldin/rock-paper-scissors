@@ -40,7 +40,7 @@ def display_images(img1, img2):
     with col4:
         st.image(f"therpsgame/{img1.lower()}.jpg", use_column_width=True, )
     with col5:
-        st.text("<----- YOUR CHOICE  \n\n         VS  \n\n COMPUTER's CHOICE -----> ")
+        st.text("<----- YOUR CHOICE  \n\n         VS  \n\n COMPUTER'S CHOICE -----> ")
     with col6:
         st.image(f"therpsgame/{img2.lower()}.jpg", use_column_width=True)
 
