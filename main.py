@@ -6,6 +6,7 @@ if 'rounds' not in st.session_state:
     st.session_state['rounds'] = []
 
 st.title("The RPS Game")
+st.image("therpsgame/therps.jpg", width=150)
 st.subheader("Choose an option below and the computer will randomly pick one as well")
 st.text("For additional details hover here ->", help="""
 After each round you will see the result in the bottom right corner.
@@ -34,12 +35,24 @@ def compChoise():
         return "Scissors"
 
 
+def display_images(img1, img2):
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.image(f"therpsgame/{img1.lower()}.jpg", use_column_width=True, )
+    with col5:
+        st.text("<----- YOUR CHOICE  \n\n         VS  \n\n COMPUTER CHOICE -----> ")
+    with col6:
+        st.image(f"therpsgame/{img2.lower()}.jpg", use_column_width=True)
+
+
 def game():
     if len(st.session_state.rounds) < 5:
         phld2 = st.empty()
         if rock:
             compTurn = compChoise()
             phld2.info("Computer choice is " + compTurn)
+            display_images("rock", compTurn)
+
             if compTurn == "Rock":
                 st.session_state.rounds.append("tie")
                 st.toast("Tie")
@@ -52,6 +65,7 @@ def game():
         if paper:
             compTurn = compChoise()
             phld2.info("Computer choice is " + compTurn)
+            display_images("paper", compTurn)
             if compTurn == "Rock":
                 st.session_state.rounds.append("won")
                 st.toast(":green[You Won!]")
@@ -64,6 +78,7 @@ def game():
         if scissors:
             compTurn = compChoise()
             phld2.info("Computer choice is " + compTurn)
+            display_images("scissors", compTurn)
             if compTurn == "Rock":
                 st.session_state.rounds.append("lost")
                 st.toast("You lost")
