@@ -50,7 +50,7 @@ def game():
         phld2 = st.empty()
         if rock:
             compTurn = compChoise()
-            phld2.info("Computer choice is " + compTurn)
+            phld2.info("Computer's choice is " + compTurn)
             display_images("rock", compTurn)
 
             if compTurn == "Rock":
@@ -64,7 +64,7 @@ def game():
                 st.toast(":green[You Won!]")
         if paper:
             compTurn = compChoise()
-            phld2.info("Computer choice is " + compTurn)
+            phld2.info("Computer's choice is " + compTurn)
             display_images("paper", compTurn)
             if compTurn == "Rock":
                 st.session_state.rounds.append("won")
@@ -77,7 +77,7 @@ def game():
                 st.toast("You lost")
         if scissors:
             compTurn = compChoise()
-            phld2.info("Computer choice is " + compTurn)
+            phld2.info("Computer's choice is " + compTurn)
             display_images("scissors", compTurn)
             if compTurn == "Rock":
                 st.session_state.rounds.append("lost")
