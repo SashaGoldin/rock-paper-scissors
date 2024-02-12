@@ -58,7 +58,7 @@ def game():
                 st.toast("Tie")
             elif compTurn == "Paper":
                 st.session_state.rounds.append("lost")
-                st.toast("You loose")
+                st.toast("You lost")
             else:
                 st.session_state.rounds.append("won")
                 st.toast(":green[You Won!]")
